@@ -710,3 +710,11 @@ body {
         justify-content: center;
     }
 }
+
+.final-mockup {
+    width: 100%;
+    max-width: 500px; /* Ограничим размер */
+    height: auto;
+    position: relative;
+    z-index: 2;
+}
