@@ -6,8 +6,9 @@
     <title>MishkaZnaet - Платформа для самостоятельной жизни</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐻</text></svg>">
 </head>
 <body>
     <!-- Navigation -->
@@ -15,13 +16,13 @@
         <div class="container nav-container">
             <div class="logo">
                 <div class="logo-icon">🐻</div>
-                <span>MishkaZnaet</span>
+                <span>Мишка знает</span>
             </div>
             <div class="nav-links">
                 <a href="#features">Возможности</a>
                 <a href="#how-it-works">Как работает</a>
                 <a href="#stats">Статистика</a>
-                <button class="btn btn-secondary">Скачать</button>
+                <a href="#download-section" class="btn btn-secondary">Скачать</a>
             </div>
         </div>
     </nav>
@@ -35,16 +36,14 @@
                     Знания для <span class="gradient-text">самостоятельной жизни</span>
                 </h1>
                 <p class="hero-subtitle">
-                    Образовательная платформа для 16–50 лет. Стартапы, медицина, налоги, законы — во всех сферах. 
-                    Больше никаких «я не знаю, с чего начать». Пошаговые инструкции со ссылками на госпорталы.
+                    Справочник по взрослой жизни: от налогов и законов до медицины и карьеры. 
+                    Чёткие пошаговые инструкции со ссылками на госпорталы. Больше никакой паники и долгих поисков.
                 </p>
                 <div class="hero-buttons">
                     <button class="btn btn-primary btn-large">
                         <span> </span> Скачать приложение
                     </button>
-                    <button class="btn btn-outline btn-large">
-                        Посмотреть демо
-                    </button>
+                
                 </div>
                 <div class="hero-stats">
                     <div class="stat-item">
@@ -80,77 +79,80 @@
 
     <!-- About Section -->
     <section class="about" id="how-it-works">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Что такое MishkaZnaet?</h2>
-                <p class="section-subtitle">
-                    Платформа, которая убирает страх перед взрослой жизнью. 
-                    Мы превращаем сложную информацию в понятные цепочки действий.
-                </p>
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Как работает Мишка Знает?</h2>
+            <p class="section-subtitle">
+                Превращаем сложные жизненные ситуации в понятные пошаговые инструкции
+            </p>
+        </div>
+        <div class="about-grid">
+            <div class="about-card">
+                <div class="about-icon gradient-1">
+                    <i class="fas fa-folder-tree"></i>
+                </div>
+                <h3>Каталог сфер жизни</h3>
+                <p>Все важные темы в одном месте: финансы, медицина, право, карьера, образование. Выбирай сферу и погружайся глубже.</p>
             </div>
-            <div class="about-grid">
-                <div class="about-card">
-                    <div class="about-icon gradient-1">🧭</div>
-                    <h3>От сферы до действия</h3>
-                    <p>4 уровня навигации: Каталог сфер → Направления внутри сфер → Каталог действий → Чёткий порядок шагов</p>
+            <div class="about-card">
+                <div class="about-icon gradient-2">
+                    <i class="fas fa-list-check"></i>
                 </div>
-                <div class="about-card">
-                    <div class="about-icon gradient-2">🏛️</div>
-                    <h3>Прямые ссылки</h3>
-                    <p>Каждый шаг содержит актуальные ссылки на нужные госпорталы, формы и сервисы. Не нужно искать вручную.</p>
+                <h3>Конкретные действия</h3>
+                <p>Не просто теория, а реальные шаги: оформить самозанятость, записаться к врачу, подать документы. Чёткий порядок действий.</p>
+            </div>
+            <div class="about-card">
+                <div class="about-icon gradient-3">
+                    <i class="fas fa-link"></i>
                 </div>
-                <div class="about-card">
-                    <div class="about-icon gradient-3">🤝</div>
-                    <h3>Для всех возрастов</h3>
-                    <p>Создано для тех, кто только закончил школу, но полезно каждому от 16 до 50 лет. Перспектива — охватить всю Россию.</p>
-                </div>
+                <h3>Ссылки на госуслуги</h3>
+                <p>Каждый шаг содержит прямые ссылки на нужные порталы и сервисы. Не нужно искать самостоятельно.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Features Section -->
     <section class="features" id="features">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Как это работает</h2>
-                <p class="section-subtitle">
-                    Четыре простых шага к уверенности в любой жизненной ситуации
-                </p>
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Возможности платформы</h2>
+            <p class="section-subtitle">Всё необходимое для уверенных действий в любой ситуации</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-globe"></i></div>
+                <h3>1. Каталог сфер</h3>
+                <p>Медицина, финансы, право, карьера, ЖКХ, образование — выбирай направление и изучай.</p>
             </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🌍</div>
-                    <h3>1. Каталог сфер</h3>
-                    <p>Выберите интересующую область: медицина, финансы, право, карьера, ЖКХ, образование, стартапы и многое другое.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💱</div>
-                    <h3>2. Направления внутри сфер</h3>
-                    <p>Углубитесь в тему. Например, в сфере «Финансы» вы найдёте налоги, кредиты, инвестиции и бюджетирование.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📋</div>
-                    <h3>3. Каталог действий</h3>
-                    <p>Конкретные жизненные задачи: «Оформить самозанятость», «Записаться к врачу», «Подать заявление в МФЦ».</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📝</div>
-                    <h3>4. Порядок действий</h3>
-                    <p>Пошаговая инструкция без воды. Что делать первым, вторым, третьим. С точными ссылками на порталы.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔍</div>
-                    <h3>5. Умный поиск</h3>
-                    <p>Не знаете, в какой сфере искать? Просто опишите ситуацию текстом — система подскажет нужный маршрут.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📈</div>
-                    <h3>6. Прогресс и напоминания</h3>
-                    <p>Отмечайте выполненные шаги, сохраняйте черновики и получайте напоминания о важных дедлайнах.</p>
-                </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-diagram-project"></i></div>
+                <h3>2. Направления внутри сфер</h3>
+                <p>В «Финансах» найдёшь налоги, кредиты, инвестиции. В «Медицине» — запись к врачам, страховки.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-bullseye"></i></div>
+                <h3>3. Каталог действий</h3>
+                <p>Конкретные задачи: «Оформить самозанятость», «Записаться к врачу», «Подать заявление в МФЦ».</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-clipboard-list"></i></div>
+                <h3>4. Пошаговая инструкция</h3>
+                <p>Что делать первым, вторым, третьим. Без воды, с точными ссылками на порталы.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-magnifying-glass"></i></div>
+                <h3>5. Умный поиск</h3>
+                <p>Не знаешь, в какой сфере искать? Опиши ситуацию — система подскажет маршрут.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                <h3>6. Прогресс и напоминания</h3>
+                <p>Отмечай выполненные шаги, сохраняй черновики и получай напоминания о дедлайнах.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Stats Banner Section -->
     <section class="stats-banner" id="stats">
@@ -183,81 +185,69 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta">
-        <div class="container">
-            <div class="cta-content" id="download">
-                <!-- Главный заголовок -->
-                <h2>Готовы перестать гуглить в панике?</h2>
-                
-                <!-- Слоган (как на примере Curely) -->
-                <p class="cta-slogan">MishkaZnaet — действуй уверенно в любой ситуации</p>
-                
-                <!-- Описание -->
-                <p>Скачайте MishkaZnaet и получите чёткий план действий для любой жизненной ситуации</p>
-                
-                <!-- Твои кнопки (App Store и Google Play) -->
-                <div class="cta-buttons">
-                    <a href="#" class="app-store-btn">
-                        <svg class="apple-icon" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-                        </svg>
-                        <div class="btn-text">
-                            <span class="download">Download on the</span>
-                            <span class="store">App Store</span>
-                        </div>
-                    </a>
-                    
-                    <a href="#" class="google-play-btn">
-                        <svg class="google-icon" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
-                        </svg>
-                        <div class="btn-text">
-                            <span class="download">Get it on</span>
-                            <span class="store">Google Play</span>
-                        </div>
-                    </a>
+    <section class="download-section" id="download-section">
+    <div class="container">
+        <div class="download-content">
+            <h2>Скачать приложение</h2>
+            <p>Пока доступна только Android-версия для тестирования</p>
+            <div class="download-buttons">
+                <a href="#" class="download-btn android">
+                    <i class="fab fa-android"></i>
+                    <div>
+                        <span class="download-label">Скачать APK</span>
+                        <span class="download-text">Android (MVP)</span>
+                    </div>
+                </a>
+                <div class="download-btn disabled">
+                    <i class="fab fa-apple"></i>
+                    <div>
+                        <span class="download-label">Скоро</span>
+                        <span class="download-text">iOS версия в разработке</span>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+    <!-- CTA Section -->
+    
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="logo">
-                        <div class="logo-icon">🐻</div>
-                        <span>MishkaZnaet</span>
-                    </div>
-                    <p>Путеводитель для тех, кто только начинает взрослую жизнь</p>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    <div class="logo-icon">🐻</div>
+                    <span>Мишка Знает</span>
                 </div>
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>Платформа</h4>
-                        <a href="#">Каталог сфер</a>
-                        <a href="#">Пошаговые гайды</a>
-                        <a href="#">ИИ-помощник</a>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Поддержка</h4>
-                        <a href="#">Центр помощи</a>
-                        <a href="#">Обратная связь</a>
-                        <a href="#">FAQ</a>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Компания</h4>
-                        <a href="#">О нас</a>
-                        <a href="#">Блог</a>
-                        <a href="#">Вакансии</a>
-                    </div>
-                </div>
+                <p>Помогаем разбираться во взрослой жизни с 2026 года</p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 MishkaZnaet. Все права защищены.</p>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Платформа</h4>
+                    <a href="#features">Возможности</a>
+                    <a href="#how-it-works">Как работает</a>
+                    <a href="#download-section">Скачать</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Поддержка</h4>
+                    <a href="#">Центр помощи</a>
+                    <a href="#">Обратная связь</a>
+                    <a href="#">FAQ</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Компания</h4>
+                    <a href="#">О нас</a>
+                    <a href="#">Блог</a>
+                </div>
             </div>
         </div>
-    </footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Мишка знает.</p>
+        </div>
+    </div>
+</footer>
 </body>
 </html>

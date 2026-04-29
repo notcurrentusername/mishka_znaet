@@ -81,7 +81,7 @@ body {
 .nav-links a {
     text-decoration: none;
     color: var(--gray);
-    font-weight: 500;
+    font-weight: 600;
     transition: color 0.3s;
 }
 
@@ -116,12 +116,20 @@ body {
 }
 
 .btn-secondary {
-    background: var(--primary);
-    color: var(--dark);
+    background: var(--primary);   /* Бежевый фон */
+    color: #000000 !important;      /* Темный текст */
+    
+    border-radius: 50px;          /* Полностью круглые углы */
+    padding: 10px 24px;           /* Отступы внутри кнопки */
+    border: none;                 /* Убираем рамку */        /* Жирность текста */
+    transition: background 0.3s ease;
+    box-shadow: none;             /* Убираем тени, если были */
 }
 
 .btn-secondary:hover {
-    background: var(--primary-dark);
+    background: var(--primary-dark); /* Чуть темнее при наведении */
+    color: #000000 !important;          /* Текст остается темным */
+
 }
 
 .btn-outline {
@@ -717,4 +725,129 @@ body {
     height: auto;
     position: relative;
     z-index: 2;
+}
+
+/* Download Section */
+.download-section {
+    padding: 80px 0;
+    background: var(--light);
+    text-align: center;
+}
+
+.download-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.download-content > p {
+    color: var(--gray);
+    margin-bottom: 2rem;
+}
+
+.download-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.download-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 0; /* Убираем gap, чтобы текст был компактнее */
+    padding: 1.2rem 2rem; /* Увеличиваем padding для воздуха */
+    background: white;
+    border: 2px solid var(--primary);
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--dark);
+    transition: all 0.3s;
+    width: 280px; /* Фиксированная ширина вместо min-width */
+    box-sizing: border-box;
+}
+
+.download-btn.android {
+    background: var(--primary); /* Бежевый фон */
+    color: #ffffff !important;  /* Белый текст (восклицательный знак важен!) */
+    border: 2px solid var(--primary);
+}
+
+/* 2. Исправляем состояние при наведении */
+.download-btn.android:hover {
+    background: var(--primary-dark); /* Темнее бежевый */
+    border-color: var(--primary-dark);
+    color: #ffffff !important; /* Текст ВСЕГДА остается белым */
+    transform: translateY(-2px); /* Легкое поднятие для красоты */
+}
+
+.download-btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.download-btn i {
+    font-size: 2rem;
+}
+
+.download-label {
+    display: block;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.download-text {
+    display: block;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Улучшенная адаптивность */
+@media (max-width: 968px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .footer-links {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .nav-links {
+        display: none; /* Можно добавить бургер-меню */
+    }
+}
+
+@media (max-width: 640px) {
+    .footer-links {
+        grid-template-columns: 1fr;
+    }
+    
+    .download-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .download-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Cursor для кнопок */
+.btn, 
+.app-store-btn, 
+.google-play-btn,
+.download-btn {
+    cursor: pointer;
+}
+
+.floating-card {
+    cursor: default;
 }
