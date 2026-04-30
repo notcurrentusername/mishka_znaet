@@ -639,7 +639,7 @@ body {
 
 .banner-stat-number {
     font-size: 2.5rem;
-    font-weight: 800;
+    font-weight: 500;
     margin-bottom: 0.5rem;
     color: var(--primary);
 }
@@ -1059,5 +1059,342 @@ body {
     .hero-buttons .download-btn {
         width: 100%;
         max-width: 280px;
+    }
+}
+
+/* --- УЛУЧШЕННАЯ МОБИЛЬНАЯ ВЕРСИЯ --- */
+@media (max-width: 768px) {
+    
+    /* 1. Hero-секция: Делаем компактнее */
+    .hero {
+        padding-top: 100px; /* Чуть меньше отступ сверху */
+        padding-bottom: 40px;
+    }
+
+    .hero-title {
+        font-size: 2.2rem; /* Уменьшаем заголовок */
+        line-height: 1.2;
+        margin-bottom: 1rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem; /* Уменьшаем текст описания */
+        line-height: 1.5;
+        margin-bottom: 1.5rem;
+    }
+
+    /* 2. Статистика (50+, 15+, 500+) - делаем в ряд */
+    .hero-stats {
+        display: flex;
+        flex-direction: row; /* В одну линию */
+        justify-content: space-between; /* Равномерно */
+        gap: 10px;
+        margin-bottom: 2rem;
+        background: white; /* Белый фон под цифры для красоты */
+        padding: 15px;
+        border-radius: 16px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    .stat-item {
+        text-align: center;
+        flex: 1;
+    }
+
+    .stat-number {
+        font-size: 1.5rem; /* Цифры поменьше */
+        margin-bottom: 0;
+    }
+
+    .stat-label {
+        font-size: 0.75rem; /* Подписи меньше */
+        line-height: 1.2;
+    }
+
+    /* 3. Кнопки скачивания - во всю ширину */
+    .hero-buttons {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .hero-buttons .download-btn {
+        width: 100%; /* Кнопка на всю ширину */
+        min-width: unset;
+        justify-content: center;
+    }
+
+    /* 4. Телефон - аккуратнее */
+    .hero-image {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .hero-phone-img {
+        width: 85%; /* Телефон чуть меньше ширины экрана */
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    /* Скрываем плавающие карточки на очень маленьких экранах, чтобы не перекрывали */
+    .floating-card {
+        display: none; 
+    }
+    
+    /* Секция "Возможности" */
+    .features-grid, .about-grid {
+        gap: 1.5rem;
+    }
+}
+
+/* --- КОМПАКТНАЯ МОБИЛЬНАЯ ВЕРСИЯ --- */
+@media (max-width: 768px) {
+    /* Убираем лишние отступы у контейнера */
+    .hero-container {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    /* Растворяем обертку hero-content */
+    .hero-content {
+        display: contents;
+    }
+
+    /* Уменьшаем отступы самой секции Hero */
+    .hero {
+        padding: 100px 0 40px; /* Было 140px 0 80px */
+    }
+
+    /* Порядок элементов */
+    .hero-badge { order: 1; margin-bottom: 1rem; }
+    .hero-title { order: 2; font-size: 2rem; margin-bottom: 1rem; }
+    .hero-subtitle { order: 3; font-size: 1rem; margin-bottom: 1.5rem; line-height: 1.6; }
+
+    /* Телефон — сразу после текста */
+    .hero-image { 
+        order: 4; 
+        margin: 1rem 0 1.5rem;
+        width: 100%;
+    }
+    
+    .hero-phone-img {
+        width: 75%; /* Чуть меньше */
+        max-width: 260px;
+    }
+
+    /* Статистика — компактная белая плашка */
+    .hero-stats {
+        order: 5;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        background: white;
+        padding: 12px 10px; /* Меньше отступы */
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        margin-bottom: 1.5rem;
+        gap: 5px;
+    }
+    
+    .stat-item {
+        text-align: center;
+        flex: 1;
+    }
+    
+    .stat-number {
+        font-size: 1.3rem; /* Меньше цифры */
+        font-weight: 700;
+        margin-bottom: 2px;
+    }
+    
+    .stat-label {
+        font-size: 0.8rem; /* Меньше текст */
+        line-height: 1.2;
+        color: var(--gray);
+    }
+
+    /* Кнопки скачивания — в конце */
+    .hero-buttons {
+        order: 6;
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+        margin-bottom: 0;
+    }
+    
+    .hero-buttons .download-btn {
+        width: 100%;
+        padding: 0.9rem 1rem; /* Компактнее */
+        border-radius: 12px;
+    }
+    
+    .hero-buttons .download-label {
+        font-size: 1rem;
+    }
+    
+    .hero-buttons .download-text {
+        font-size: 0.8rem;
+    }
+
+    /* Скрываем плавающие карточки */
+    .floating-card {
+        display: none;
+    }
+
+    /* Уменьшаем заголовки секций */
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+    }
+
+    /* Уменьшаем отступы у секций */
+    .about, .features, .cta, .download-section {
+        padding: 60px 0; /* Было 100px 0 */
+    }
+
+    /* Карточки — компактнее */
+    .about-card, .feature-card {
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Футер */
+    .footer {
+        padding: 40px 0 20px;
+    }
+}
+
+/* --- ФИНАЛЬНАЯ ПОЛИРОВКА МОБИЛЬНОЙ ВЕРСИИ --- */
+@media (max-width: 768px) {
+    
+    /* 1. Блок статистики — ширина как у текста (100%) */
+    .hero-stats {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 0 1.5rem 0 !important; /* Убираем лишние отступы */
+        box-sizing: border-box;
+        padding: 1.5rem 1rem; /* Чуть больше воздуха внутри */
+        display: flex;
+        justify-content: space-between; /* Равномерное распределение */
+    }
+
+    /* 2. Кнопки скачивания — по центру и во всю ширину */
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Центрируем сами кнопки */
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .hero-buttons .download-btn {
+        width: 100%; /* Растягиваем на всю ширину */
+        max-width: 100%;
+        justify-content: center; /* Центрируем иконку и текст внутри кнопки */
+        text-align: center;
+    }
+}
+
+/* --- КОМПАКТНЫЙ ФУТЕР НА МОБИЛЬНЫХ --- */
+@media (max-width: 968px) {
+    .footer {
+        padding: 40px 0 20px; /* Уменьшаем отступы */
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr; /* Бренд сверху, ссылки снизу */
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .footer-brand {
+        margin-bottom: 1rem;
+    }
+    
+    /* Ссылки в 2 колонки даже на узких экранах */
+    .footer-links {
+        grid-template-columns: repeat(2, 1fr); /* 2 колонки */
+        gap: 1.5rem;
+        text-align: left;
+    }
+    
+    .footer-column h4 {
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .footer-column a {
+        font-size: 0.9rem;
+        margin-bottom: 0.4rem;
+    }
+}
+
+/* --- ИСПРАВЛЕНИЕ ФУТЕРА НА МОБИЛЬНЫХ --- */
+@media (max-width: 768px) {
+    /* Логотип по центру */
+    .footer-brand {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 2.5rem;
+    }
+    
+    .footer-brand .logo {
+        margin-bottom: 1rem;
+    }
+    
+    /* Ссылки - блоки по центру, текст внутри слева */
+    .footer-links {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 колонки */
+        gap: 2rem;
+        width: 100%;
+        justify-items: center; /* Центрируем сами блоки */
+    }
+    
+    .footer-column {
+        text-align: left; /* Текст внутри блоков слева */
+        width: 100%;
+        max-width: 200px; /* Ограничиваем ширину колонок */
+    }
+    
+    .footer-column h4 {
+        margin-bottom: 1rem;
+        font-weight: 700;
+    }
+    
+    .footer-column a {
+        margin: 0.4rem 0;
+        display: block;
+    }
+    
+    /* Копирайт по центру */
+    .footer-bottom {
+        text-align: center;
+        margin-top: 2rem;
+    }
+}
+
+/* Логотип в левый край на мобильных */
+@media (max-width: 768px) {
+    .footer-content {
+        align-items: flex-start; /* Сдвигаем весь блок бренда к левому краю */
+    }
+    
+    .footer-brand {
+        align-items: flex-start; /* Иконка и текст внутри бренда по левому краю */
+        text-align: left;
+        width: 100%;
+    }
+    
+    .logo {
+        justify-content: flex-start; /* Логотип прижимается влево */
+        margin: 0; /* Сбрасываем любые центрирующие отступы */
     }
 }
