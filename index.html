@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MishkaZnaet - Платформа для самостоятельной жизни</title>
+    <title>Мишка знает - Платформа для самостоятельной жизни</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐻</text></svg>">
+    <!-- Phosphor Icons - библиотека иконок -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
 </head>
 <body>
     <!-- Navigation -->
@@ -22,7 +27,9 @@
                 <a href="#features">Возможности</a>
                 <a href="#how-it-works">Как работает</a>
                 <a href="#stats">Статистика</a>
-                <a href="#download-section" class="btn btn-secondary">Скачать</a>
+                <a href="#download-section" class="btn btn-primary btn-large">
+                    Скачать <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
         </div>
     </nav>
@@ -39,11 +46,24 @@
                     Справочник по взрослой жизни: от налогов и законов до медицины и карьеры. 
                     Чёткие пошаговые инструкции со ссылками на госпорталы. Больше никакой паники и долгих поисков.
                 </p>
-                <div class="hero-buttons">
-                    <button class="btn btn-primary btn-large">
-                        <span> </span> Скачать приложение
-                    </button>
-                
+                                <div class="hero-buttons">
+                    <!-- Кнопка Android (Активная) -->
+                    <a href="#" class="download-btn android">
+                        <i class="fab fa-android"></i>
+                        <div>
+                            <span class="download-label">Скачать APK</span>
+                            <span class="download-text">Android (MVP)</span>
+                        </div>
+                    </a>
+                    
+                    <!-- Кнопка iOS (Неактивная) -->
+                    <div class="download-btn disabled">
+                        <i class="fab fa-apple"></i>
+                        <div>
+                            <span class="download-label">Скоро</span>
+                            <span class="download-text">iOS версия в разработке</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="hero-stats">
                     <div class="stat-item">
@@ -63,22 +83,24 @@
             <div class="hero-image">
         <img src="img/mockup/iphone17.png" alt="Приложение MishkaZnaet" class="final-mockup">
         
-                <!-- Если хочешь, плавающие карточки можно вернуть поверх -->
-                <div class="floating-card card-1">
-                    <span class="icon">📂</span>
-                    <span>Каталог сфер</span>
-                </div>
+                        <!-- Карточка 1 (слева сверху) -->
+            <div class="floating-card card-1">
+                <i class="fas fa-folder"></i>
+                <span>Каталог сфер</span>
             </div>
-                <div class="floating-card card-2">
-                    <span class="icon">🔗</span>
-                    <span>Ссылки на госпорталы</span>
-                </div>
+
+            <!-- Карточка 2 (справа снизу) -->
+            <div class="floating-card card-2">
+                <i class="fas fa-link"></i>
+                <span>Ссылки на госпорталы</span>
             </div>
+
+
         </div>
     </section>
 
     <!-- About Section -->
-    <section class="about" id="how-it-works">
+ <section class="about" id="how-it-works">
     <div class="container">
         <div class="section-header">
             <h2 class="section-title">Как работает Мишка Знает?</h2>
@@ -88,21 +110,21 @@
         </div>
         <div class="about-grid">
             <div class="about-card">
-                <div class="about-icon gradient-1">
-                    <i class="fas fa-folder-tree"></i>
+                <div class="about-icon-solid">
+                    <i class="fas fa-globe"></i>
                 </div>
                 <h3>Каталог сфер жизни</h3>
                 <p>Все важные темы в одном месте: финансы, медицина, право, карьера, образование. Выбирай сферу и погружайся глубже.</p>
             </div>
             <div class="about-card">
-                <div class="about-icon gradient-2">
-                    <i class="fas fa-list-check"></i>
+                <div class="about-icon-solid">
+                    <i class="fas fa-square-check"></i>
                 </div>
                 <h3>Конкретные действия</h3>
                 <p>Не просто теория, а реальные шаги: оформить самозанятость, записаться к врачу, подать документы. Чёткий порядок действий.</p>
             </div>
             <div class="about-card">
-                <div class="about-icon gradient-3">
+                <div class="about-icon-solid">
                     <i class="fas fa-link"></i>
                 </div>
                 <h3>Ссылки на госуслуги</h3>
@@ -113,43 +135,74 @@
 </section>
 
     <!-- Features Section -->
-    <section class="features" id="features">
+<section class="features" id="features">
     <div class="container">
         <div class="section-header">
             <h2 class="section-title">Возможности платформы</h2>
             <p class="section-subtitle">Всё необходимое для уверенных действий в любой ситуации</p>
         </div>
         <div class="features-grid">
+            
+            <!-- Карточка 1 -->
             <div class="feature-card">
-                <div class="feature-icon"><i class="fas fa-globe"></i></div>
-                <h3>1. Каталог сфер</h3>
+                <div class="feature-icon-circle">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h3>Каталог сфер</h3>
                 <p>Медицина, финансы, право, карьера, ЖКХ, образование — выбирай направление и изучай.</p>
+                <a href="#" class="feature-link">Подробнее <i class="fas fa-arrow-right"></i></a>
             </div>
+
+            <!-- Карточка 2 -->
             <div class="feature-card">
-                <div class="feature-icon"><i class="fas fa-diagram-project"></i></div>
-                <h3>2. Направления внутри сфер</h3>
+                <div class="feature-icon-circle">
+                    <i class="fas fa-sitemap"></i>
+                </div>
+                <h3>Направления внутри сфер</h3>
                 <p>В «Финансах» найдёшь налоги, кредиты, инвестиции. В «Медицине» — запись к врачам, страховки.</p>
+                <a href="#" class="feature-link">Подробнее <i class="fas fa-arrow-right"></i></a>
             </div>
+
+            <!-- Карточка 3 -->
             <div class="feature-card">
-                <div class="feature-icon"><i class="fas fa-bullseye"></i></div>
-                <h3>3. Каталог действий</h3>
+                <div class="feature-icon-circle">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <h3>Каталог действий</h3>
                 <p>Конкретные задачи: «Оформить самозанятость», «Записаться к врачу», «Подать заявление в МФЦ».</p>
+                <a href="#" class="feature-link">Подробнее <i class="fas fa-arrow-right"></i></a>
             </div>
+
+            <!-- Карточка 4 -->
             <div class="feature-card">
-                <div class="feature-icon"><i class="fas fa-clipboard-list"></i></div>
-                <h3>4. Пошаговая инструкция</h3>
+                <div class="feature-icon-circle">
+                    <i class="fas fa-list-check"></i>
+                </div>
+                <h3>Пошаговая инструкция</h3>
                 <p>Что делать первым, вторым, третьим. Без воды, с точными ссылками на порталы.</p>
+                <a href="#" class="feature-link">Подробнее <i class="fas fa-arrow-right"></i></a>
             </div>
+
+            <!-- Карточка 5 -->
             <div class="feature-card">
-                <div class="feature-icon"><i class="fas fa-magnifying-glass"></i></div>
-                <h3>5. Умный поиск</h3>
+                <div class="feature-icon-circle">
+                    <i class="fas fa-magnifying-glass"></i>
+                </div>
+                <h3>Умный поиск</h3>
                 <p>Не знаешь, в какой сфере искать? Опиши ситуацию — система подскажет маршрут.</p>
+                <a href="#" class="feature-link">Подробнее <i class="fas fa-arrow-right"></i></a>
             </div>
+
+            <!-- Карточка 6 -->
             <div class="feature-card">
-                <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
-                <h3>6. Прогресс и напоминания</h3>
+                <div class="feature-icon-circle">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Прогресс и напоминания</h3>
                 <p>Отмечай выполненные шаги, сохраняй черновики и получай напоминания о дедлайнах.</p>
+                <a href="#" class="feature-link">Подробнее <i class="fas fa-arrow-right"></i></a>
             </div>
+
         </div>
     </div>
 </section>
@@ -180,7 +233,6 @@
                         <div class="banner-stat-label">Перспектива полного охвата</div>
                     </div>
                 </div>
-                <button class="btn btn-white btn-large">Начать бесплатно</button>
             </div>
         </div>
     </section>
