@@ -658,7 +658,7 @@ body {
 
 .banner-stat-number {
     font-size: 2.5rem;
-    font-weight: 500;
+    font-weight: 700;
     margin-bottom: 0.5rem;
     color: var(--primary);
 }
@@ -1489,5 +1489,1073 @@ body {
     padding-left: 0 !important;
 }
 
+/* --- НОВЫЙ ЭФФЕКТ НАВЕДЕНИЯ ДЛЯ КАРТОЧЕК --- */
 
+.feature-card {
+    /* Плавный переход для тени */
+    transition: box-shadow 0.3s ease !important;
+}
 
+.feature-card:hover {
+    /* Убираем сдвиг вверх */
+    transform: none !important; 
+    
+    /* Добавляем мягкую тень */
+    box-shadow: 0 15px 35px rgba(42, 37, 32, 0.12) !important;
+    
+    /* Опционально: чуть-чуть меняем цвет рамки, если она есть */
+    border-color: rgba(212, 165, 116, 0.3);
+}
+
+/* --- НОВЫЙ ЭФФЕКТ НАВЕДЕНИЯ ДЛЯ КАРТОЧЕК ABOUT --- */
+.about-card {
+    /* Плавный переход для тени */
+    transition: box-shadow 0.3s ease, transform 0.3s ease !important;
+}
+
+.about-card:hover {
+    /* Убираем подпрыгивание */
+    transform: translateY(0) !important;
+    
+    /* Добавляем мягкую тень */
+    box-shadow: 0 15px 35px rgba(42, 37, 32, 0.12) !important;
+}
+/* ==================================================
+   БУРГЕР-МЕНЮ ДЛЯ МОБИЛЬНЫХ
+   ================================================== */
+
+@media (max-width: 768px) {
+    
+    /* === КНОПКА БУРГЕР === */
+    .burger-menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        position: relative;
+        z-index: 1001;
+        margin-left: auto;
+    }
+
+    /* Иконка бургера/крестика */
+    .burger-menu i {
+        font-size: 1.8rem;
+        color: var(--dark);
+        transition: all 0.3s ease;
+    }
+
+    /* === БОКОВОЕ МЕНЮ (ШТОРКА) === */
+    .nav-links {
+        /* Всегда flex для анимации */
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        
+        position: fixed;
+        top: 0;
+        right: -100%; /* Спрятано справа */
+        width: 280px;
+        height: 100vh;
+        background: #ffffff;
+        z-index: 1000;
+        padding: 80px 20px 20px;
+        box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+        
+        /* Плавная анимация выезда */
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Меню открыто */
+    .nav-links.active {
+        right: 0;
+    }
+
+    /* Ссылки внутри меню */
+    .nav-links a {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--dark);
+        text-decoration: none;
+        padding-bottom: 15px;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.3s ease;
+    }
+
+    /* Появление ссылок при открытии */
+    .nav-links.active a {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Задержка для каждой ссылки */
+    .nav-links.active a:nth-child(1) { transition-delay: 0.1s; }
+    .nav-links.active a:nth-child(2) { transition-delay: 0.15s; }
+    .nav-links.active a:nth-child(3) { transition-delay: 0.2s; }
+    .nav-links.active a:nth-child(4) { transition-delay: 0.25s; }
+
+    /* Кнопка "Скачать" внутри меню */
+    .nav-links .btn-secondary {
+        margin-top: 1rem;
+        width: 100%;
+        text-align: center;
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+
+    /* === ЗАТЕМНЕНИЕ ФОНА === */
+    .nav-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(42, 37, 32, 0.5);
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s ease;
+    }
+
+    .nav-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* === СКРЫТИЕ ОБЫЧНОГО МЕНЮ НА МОБИЛЬНЫХ === */
+    .navbar .nav-links.desktop-only {
+        display: none !important;
+    }
+}
+
+/* === НА ДЕСКТОПЕ БУРГЕР СКРЫТ === */
+@media (min-width: 769px) {
+    .burger-menu {
+        display: none !important;
+    }
+    
+    .nav-overlay {
+        display: none !important;
+    }
+}
+
+/* ==================================================
+   ТЁМНАЯ ТЕМА
+   ================================================== */
+
+/* Кнопка переключения темы */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-right: 1rem;
+    z-index: 1001;
+}
+
+.theme-toggle:hover {
+    background: var(--primary);
+    transform: rotate(15deg);
+}
+
+.theme-toggle i {
+    font-size: 1.2rem;
+    color: var(--primary-dark);
+    transition: color 0.3s;
+}
+
+.theme-toggle:hover i {
+    color: white;
+}
+
+/* === ТЁМНАЯ ТЕМА - ПЕРЕМЕННЫЕ === */
+body.dark-theme {
+    --bg-primary: #2A2520;        /* Тёмный фон (из приложения) */
+    --bg-secondary: #3A3530;      /* Фон карточек */
+    --bg-tertiary: #454038;       /* Фон элементов */
+    --text-primary: #F7F2ED;      /* Светлый текст */
+    --text-secondary: #D4C4B0;    /* Приглушённый текст */
+    --border-color: rgba(212, 165, 116, 0.2);
+    --shadow-color: rgba(0, 0, 0, 0.4);
+    --card-bg: #3A3530;
+}
+
+body.dark-theme {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+/* Навигация в тёмной теме */
+body.dark-theme .navbar {
+    background: rgba(42, 37, 32, 0.95);
+    border-bottom-color: rgba(212, 165, 116, 0.1);
+}
+
+body.dark-theme .logo {
+    color: var(--text-primary);
+}
+
+body.dark-theme .nav-links a {
+    color: var(--text-secondary);
+}
+
+body.dark-theme .nav-links a:hover {
+    color: var(--primary);
+}
+
+body.dark-theme .theme-toggle {
+    border-color: var(--primary);
+}
+
+body.dark-theme .theme-toggle i {
+    color: var(--primary);
+}
+
+body.dark-theme .theme-toggle:hover {
+    background: var(--primary);
+}
+
+body.dark-theme .theme-toggle:hover i {
+    color: var(--dark);
+}
+
+/* Hero секция */
+body.dark-theme .hero {
+    background: var(--bg-primary);
+}
+
+body.dark-theme .hero::before {
+    background: radial-gradient(circle, rgba(212, 165, 116, 0.15) 0%, transparent 70%);
+}
+
+body.dark-theme .hero-title {
+    color: var(--text-primary);
+}
+
+body.dark-theme .hero-subtitle {
+    color: var(--text-secondary);
+}
+
+body.dark-theme .hero-badge {
+    background: var(--bg-secondary);
+    border-color: var(--border-color);
+    color: var(--primary);
+}
+
+body.dark-theme .floating-card {
+    background: var(--bg-secondary);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+/* Кнопки */
+body.dark-theme .btn-secondary {
+    background: var(--primary);
+    color: var(--dark) !important;
+}
+
+body.dark-theme .btn-primary {
+    background: var(--text-primary);
+    color: var(--dark);
+}
+
+/* About секция */
+body.dark-theme .about {
+    background: var(--bg-secondary);
+}
+
+body.dark-theme .about-card {
+    background: var(--bg-tertiary);
+    border-color: var(--border-color);
+}
+
+body.dark-theme .about-card h3 {
+    color: var(--text-primary);
+}
+
+body.dark-theme .about-card p {
+    color: var(--text-secondary);
+}
+
+body.dark-theme .about-icon-solid {
+    background: var(--primary);
+}
+
+/* Features секция */
+body.dark-theme .features {
+    background: var(--bg-primary);
+}
+
+body.dark-theme .feature-card {
+    background: var(--bg-secondary);
+    border-color: var(--border-color);
+}
+
+body.dark-theme .feature-card:hover {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-theme .feature-card h3 {
+    color: var(--text-primary);
+}
+
+body.dark-theme .feature-card p {
+    color: var(--text-secondary);
+}
+
+body.dark-theme .feature-icon-circle {
+    background: rgba(212, 165, 116, 0.2);
+}
+
+body.dark-theme .feature-icon-circle i {
+    color: var(--primary);
+}
+
+/* Stats Banner */
+body.dark-theme .stats-banner {
+    background: #1A1612;
+}
+
+body.dark-theme .banner-stat {
+    background: rgba(212, 165, 116, 0.1);
+    border-color: rgba(212, 165, 116, 0.2);
+}
+
+/* Download секция */
+body.dark-theme .download-section {
+    background: var(--bg-secondary);
+}
+
+body.dark-theme .download-content h2 {
+    color: var(--text-primary);
+}
+
+body.dark-theme .download-content > p {
+    color: var(--text-secondary);
+}
+
+body.dark-theme .download-btn.android {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+body.dark-theme .download-btn.disabled {
+    background: var(--bg-tertiary);
+    border-color: var(--border-color);
+}
+
+/* Footer */
+body.dark-theme .footer {
+    background: #1A1612;
+}
+
+body.dark-theme .footer-brand p {
+    color: var(--text-secondary);
+}
+
+body.dark-theme .footer-column a {
+    color: var(--text-secondary);
+}
+
+body.dark-theme .footer-column a:hover {
+    color: var(--primary);
+}
+
+body.dark-theme .footer-bottom {
+    border-top-color: rgba(212, 165, 116, 0.1);
+}
+
+/* Мобильное меню */
+body.dark-theme .nav-links {
+    background: var(--bg-secondary);
+}
+
+body.dark-theme .nav-links a {
+    color: var(--text-primary);
+    border-bottom-color: var(--border-color);
+}
+
+body.dark-theme .nav-overlay {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+/* Анимация переключения темы */
+body, 
+.navbar,
+.hero,
+.about,
+.features,
+.feature-card,
+.about-card,
+.footer,
+.download-section {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* === УБИРАЕМ ПРЯМОУГОЛЬНИК В НАВБАРЕ (ТОЛЬКО ДЕСКТОП) === */
+@media (min-width: 769px) {
+    .navbar .nav-links {
+        background: transparent !important;
+        padding: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+    }
+}
+
+/* ==================================================
+   ИСПРАВЛЕНИЕ ТЕКСТА В ТЁМНОЙ ТЕМЕ
+   ================================================== */
+
+body.dark-theme {
+    /* 1. Глобальные цвета текста */
+    color: #F7F2ED;
+}
+
+/* 2. Заголовки секций (Светло-бежевый, как в приложении) */
+body.dark-theme .section-title,
+body.dark-theme .hero-title,
+body.dark-theme .hero-badge {
+    color: #F7F2ED !important;
+}
+
+/* 3. Подзаголовки и описания (Чуть приглушенный бежевый) */
+body.dark-theme .section-subtitle,
+body.dark-theme .hero-subtitle,
+body.dark-theme .banner-content > p {
+    color: #D4C4B0 !important;
+    opacity: 0.9;
+}
+
+/* 4. Текст внутри карточек */
+body.dark-theme .feature-card h3,
+body.dark-theme .about-card h3,
+body.dark-theme .banner-stat-number {
+    color: #F7F2ED !important;
+}
+
+body.dark-theme .feature-card p,
+body.dark-theme .about-card p,
+body.dark-theme .banner-stat-label {
+    color: #D4C4B0 !important;
+}
+
+/* 5. Исправление для "Как работает" и "Возможности" */
+body.dark-theme .about,
+body.dark-theme .features {
+    background-color: #2A2520; /* Убеждаемся, что фон темный */
+}
+
+/* === ИСПРАВЛЕНИЕ ХОВЕРА КНОПКИ "СКАЧАТЬ" В ТЕМНОЙ ТЕМЕ === */
+
+body.dark-theme .navbar .btn-secondary {
+    /* Базовое состояние: Бежевый фон, темный текст */
+    background: var(--primary);
+    color: var(--dark) !important; 
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Плавная анимация */
+    border: none;
+}
+
+body.dark-theme .navbar .btn-secondary:hover {
+    /* При наведении: Фон чуть темнее, кнопка "всплывает" */
+    background: var(--primary-dark);
+    transform: translateY(-2px); /* Легкий подъем */
+    box-shadow: 0 5px 15px rgba(212, 165, 116, 0.3); /* Мягкое свечение */
+    color: var(--dark) !important; /* Текст остается темным */
+}
+
+/* ==================================================
+   ЕДИНЫЕ ЭФФЕКТЫ НАВЕДЕНИЯ (HOVER) ДЛЯ ОБЕИХ ТЕМ
+   ================================================== */
+
+/* 1. Ссылки в навигации ("Возможности", "Как работает", "Статистика") */
+.nav-links a {
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* Светлая тема */
+.nav-links a:hover {
+    color: var(--primary-dark);
+}
+
+/* Тёмная тема */
+body.dark-theme .nav-links a {
+    color: var(--text-secondary) !important;
+}
+body.dark-theme .nav-links a:hover {
+    color: var(--primary) !important;
+    text-shadow: 0 0 8px rgba(212, 165, 116, 0.3); /* Лёгкое свечение */
+}
+
+/* 2. Кнопка "Скачать" */
+.btn-secondary {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Светлая тема */
+.btn-secondary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(184, 138, 90, 0.35);
+}
+
+/* Тёмная тема */
+body.dark-theme .btn-secondary {
+    background: var(--primary) !important;
+    color: var(--dark) !important;
+}
+body.dark-theme .btn-secondary:hover {
+    background: var(--primary-dark) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 165, 116, 0.4);
+    color: var(--dark) !important;
+}
+
+/* 3. Кнопка смены темы (Луна/Солнце) */
+.theme-toggle {
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary);
+    background: transparent;
+}
+
+.theme-toggle:hover {
+    transform: rotate(15deg) scale(1.1);
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.theme-toggle:hover i {
+    color: var(--dark);
+}
+
+/* Тёмная тема для кнопки смены темы */
+body.dark-theme .theme-toggle {
+    border-color: var(--primary-dark);
+}
+body.dark-theme .theme-toggle:hover {
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+body.dark-theme .theme-toggle:hover i {
+    color: var(--light);
+}
+
+/* ==================================================
+   ИСПРАВЛЕНИЕ МОБИЛЬНОГО МЕНЮ И КНОПКИ ТЕМЫ
+   ================================================== */
+
+@media (max-width: 768px) {
+    
+    /* === 1. ПОКАЗЫВАЕМ БУРГЕР-МЕНЮ (ДЕЛАЕМ ВИДИМЫМ) === */
+    .burger-menu {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        position: relative;
+        z-index: 1002;
+        margin-left: auto;
+    }
+
+    /* Иконка бургера - делаем видимой в обеих темах */
+    .burger-menu i {
+        font-size: 1.8rem;
+        color: var(--dark) !important; /* Принудительно темный цвет */
+        transition: all 0.3s ease;
+    }
+
+    /* В темной теме делаем иконку светлой */
+    body.dark-theme .burger-menu i {
+        color: var(--text-primary) !important; /* Светлый цвет */
+    }
+
+    /* === 2. УМЕНЬШАЕМ ШИРИНУ МОБИЛЬНОГО МЕНЮ === */
+    .nav-links {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 240px; /* Уменьшили с 280px до 240px */
+        max-width: 85vw; /* Максимум 85% от ширины экрана */
+        height: 100vh;
+        background: var(--light);
+        z-index: 1000;
+        padding: 80px 20px 20px;
+        box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* В темной теме меняем фон меню */
+    body.dark-theme .nav-links {
+        background: var(--bg-secondary);
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    /* === 3. ПЕРЕМЕЩАЕМ КНОПКУ СМЕНЫ ТЕМЫ ВНУТРЬ МЕНЮ === */
+    .theme-toggle {
+        position: absolute;
+        right: 70px; /* Слева от крестика закрытия */
+        top: 18px;
+        width: 40px;
+        height: 40px;
+        z-index: 1001;
+        margin: 0;
+        background: transparent;
+        border: 2px solid var(--primary);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .theme-toggle i {
+        font-size: 1.2rem;
+        color: var(--primary-dark);
+        transition: color 0.3s;
+    }
+
+    .theme-toggle:hover {
+        background: var(--primary);
+    }
+
+    .theme-toggle:hover i {
+        color: white;
+    }
+
+    /* В темной теме корректируем кнопку */
+    body.dark-theme .theme-toggle {
+        border-color: var(--primary);
+    }
+
+    body.dark-theme .theme-toggle i {
+        color: var(--primary);
+    }
+
+    /* === 4. ССЫЛКИ ВНУТРИ МЕНЮ === */
+    .nav-links a {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--dark);
+        text-decoration: none;
+        padding-bottom: 15px;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.3s ease;
+    }
+
+    /* В темной теме */
+    body.dark-theme .nav-links a {
+        color: var(--text-primary);
+        border-bottom-color: var(--border-color);
+    }
+
+    .nav-links.active a {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .nav-links.active a:nth-child(1) { transition-delay: 0.1s; }
+    .nav-links.active a:nth-child(2) { transition-delay: 0.15s; }
+    .nav-links.active a:nth-child(3) { transition-delay: 0.2s; }
+    .nav-links.active a:nth-child(4) { transition-delay: 0.25s; }
+
+    /* === 5. ЗАТЕМНЕНИЕ ФОНА === */
+    .nav-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(42, 37, 32, 0.5);
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s ease;
+    }
+
+    .nav-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* === 6. СКРЫВАЕМ ОБЫЧНОЕ МЕНЮ НА МОБИЛЬНЫХ === */
+    .navbar .nav-links.desktop-only {
+        display: none !important;
+    }
+}
+
+/* === НА ДЕСКТОПЕ БУРГЕР СКРЫТ === */
+@media (min-width: 769px) {
+    .burger-menu {
+        display: none !important;
+    }
+    
+    .nav-overlay {
+        display: none !important;
+    }
+    
+    /* На десктопе кнопку темы показываем в шапке */
+    .theme-toggle {
+        display: flex !important;
+    }
+}
+
+/* ==================================================
+   КНОПКА ТЕМЫ: ТОЛЬКО В МОБИЛЬНОМ МЕНЮ
+   ================================================== */
+
+/* На десктопе скрываем кнопку (чтобы не дублировалась в шапке) */
+@media (min-width: 769px) {
+    .theme-toggle {
+        display: none !important;
+    }
+}
+
+/* На мобильных: сбрасываем старые стили и встраиваем в меню */
+@media (max-width: 768px) {
+    .theme-toggle {
+        /* 1. Убираем абсолютное позиционирование из шапки */
+        position: relative !important;
+        top: auto !important;
+        right: auto !important;
+        z-index: auto !important;
+        margin: 0 !important;
+        
+        /* 2. Принудительно показываем и центрируем внутри меню */
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2.5rem !important; /* Отступ от кнопок меню */
+        margin-left: auto !important;
+        margin-right: auto !important;
+        
+        /* 3. Внешний вид */
+        width: 50px;
+        height: 50px;
+        background: transparent;
+        border: 2px solid var(--primary);
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .theme-toggle i {
+        font-size: 1.4rem;
+        color: var(--primary-dark);
+        transition: color 0.3s;
+    }
+
+    /* Эффект при наведении */
+    .theme-toggle:hover {
+        background: var(--primary);
+        transform: rotate(15deg) scale(1.05);
+    }
+    .theme-toggle:hover i {
+        color: white;
+    }
+
+    /* Стили для тёмной темы */
+    body.dark-theme .theme-toggle {
+        border-color: var(--primary);
+    }
+    body.dark-theme .theme-toggle i {
+        color: var(--primary);
+    }
+}
+
+/* === ВОЗВРАЩАЕМ КНОПКУ ТЕМЫ ДЛЯ ДЕСКТОПА === */
+@media (min-width: 769px) {
+    .theme-toggle {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: transparent;
+        border: 2px solid var(--primary);
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-right: 1rem;
+        position: relative;
+        z-index: 1001;
+    }
+
+    .theme-toggle i {
+        font-size: 1.2rem;
+        color: var(--primary-dark);
+        transition: color 0.3s;
+    }
+
+    .theme-toggle:hover {
+        background: var(--primary);
+        transform: rotate(15deg);
+    }
+
+    .theme-toggle:hover i {
+        color: white;
+    }
+
+    /* Для тёмной темы */
+    body.dark-theme .theme-toggle {
+        border-color: var(--primary);
+    }
+
+    body.dark-theme .theme-toggle i {
+        color: var(--primary);
+    }
+
+    body.dark-theme .theme-toggle:hover {
+        background: var(--primary);
+    }
+
+    body.dark-theme .theme-toggle:hover i {
+        color: var(--dark);
+    }
+}
+
+/* === ЦЕНТРИРОВАНИЕ КНОПКИ "СКАЧАТЬ" В МОБИЛЬНОМ МЕНЮ === */
+@media (max-width: 768px) {
+    .nav-links .btn-secondary {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        width: 100% !important;
+        gap: 0.5rem !important;
+    }
+    
+    .nav-links .btn-secondary i {
+        display: inline-block;
+    }
+}
+
+/* === РАЗМЫТИЕ ФОНА ПРИ ОТКРЫТИИ МЕНЮ === */
+.nav-overlay {
+    /* Полупрозрачный фон + плавное появление размытия */
+    background: rgba(42, 37, 32, 0.35);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    transition: all 0.4s ease;
+}
+
+.nav-overlay.active {
+    background: rgba(42, 37, 32, 0.5);
+    backdrop-filter: blur(8px); /* Сила размытия (можно менять 4px–12px) */
+    -webkit-backdrop-filter: blur(8px);
+}
+
+/* === РАЗМЫТИЕ ФОНА ПРИ ОТКРЫТИИ МЕНЮ === */
+.nav-overlay {
+    /* Полупрозрачный фон + плавное появление размытия */
+    background: rgba(42, 37, 32, 0.35);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    transition: all 0.4s ease;
+}
+
+.nav-overlay.active {
+    background: rgba(42, 37, 32, 0.5);
+    backdrop-filter: blur(8px); /* Сила размытия (можно менять 4px–12px) */
+    -webkit-backdrop-filter: blur(8px);
+}
+
+/* === ЦЕНТРИРОВАНИЕ ФУТЕРА === */
+.footer {
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.footer-column {
+    text-align: left;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(212, 165, 116, 0.1);
+}
+
+/* Адаптив для мобильных */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .footer-column {
+        text-align: center;
+    }
+}
+
+/* === ХОВЕР ДЛЯ КАРТОЧЕК В ТЁМНОЙ ТЕМЕ === */
+
+/* Карточки возможностей (Features) */
+body.dark-theme .feature-card {
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+body.dark-theme .feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(212, 165, 116, 0.2);
+    border-color: var(--primary);
+    background: var(--bg-tertiary);
+}
+
+/* Карточки About (если они есть) */
+body.dark-theme .about-card {
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+body.dark-theme .about-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(212, 165, 116, 0.2);
+    border-color: var(--primary);
+    background: var(--bg-tertiary);
+}
+
+/* Иконки в карточках */
+body.dark-theme .feature-icon-circle,
+body.dark-theme .about-icon-solid {
+    transition: all 0.3s ease;
+}
+
+body.dark-theme .feature-card:hover .feature-icon-circle,
+body.dark-theme .about-card:hover .about-icon-solid {
+    background: rgba(212, 165, 116, 0.3);
+    transform: scale(1.05);
+}
+
+/* Заголовки карточек */
+body.dark-theme .feature-card h3,
+body.dark-theme .about-card h3 {
+    transition: color 0.3s ease;
+}
+
+body.dark-theme .feature-card:hover h3,
+body.dark-theme .about-card:hover h3 {
+    color: var(--primary);
+}
+
+/* === ЕДИНЫЙ ХОВЕР ДЛЯ КАРТОЧЕК (АВТО-ПОДСТРОЙКА ПОД ТЕМУ) === */
+.feature-card, .about-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feature-card:hover, .about-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary);
+    background-color: var(--card-hover-bg, #f7f2ed); /* Фон для светлой темы */
+    box-shadow: 0 12px 30px rgba(212, 165, 116, 0.15);
+}
+
+/* Тёмная тема: меняем только фон и тень, поведение остаётся тем же */
+body.dark-theme .feature-card:hover,
+body.dark-theme .about-card:hover {
+    background-color: var(--bg-tertiary);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Иконки и заголовки (одинаково для обеих тем) */
+.feature-card:hover .feature-icon-circle,
+.about-card:hover .about-icon-solid {
+    transform: scale(1.06);
+    background-color: rgba(212, 165, 116, 0.25);
+}
+
+.feature-card:hover h3,
+.about-card:hover h3 {
+    color: var(--primary);
+}
+
+/* === БЕЖЕВЫЙ ЦВЕТ ДЛЯ ЦИФР В СТАТИСТИКЕ (ТЁМНАЯ ТЕМА) === */
+body.dark-theme .stat-number,
+body.dark-theme .banner-stat-number,
+body.dark-theme .stats-banner h3,
+body.dark-theme .banner-stat h3 {
+    color: #D4A574 !important; /* Бежевый цвет */
+}
+
+/* === ЛОГОТИП С PNG-КАРТИНКОЙ === */
+.logo-icon {
+    width: 45px;
+    height: 45px;
+    background: var(--primary);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Чтобы картинка не вылезала за скругления */
+    flex-shrink: 0;
+}
+
+.logo-icon img {
+    width: 85%;  /* Картинка чуть меньше фона для красоты */
+    height: 85%;
+    object-fit: contain; /* Сохраняет пропорции */
+    display: block;
+}
+
+/* Для мобильной версии чуть уменьшим */
+@media (max-width: 768px) {
+    .logo-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+    }
+}
+
+/* === УБИРАЕМ ПРЯМОУГОЛЬНИК ЗА ЛОГОТИПОМ === */
+.logo-icon {
+    background: transparent !important;  /* Убираем цветной фон */
+    border-radius: 0 !important;         /* Убираем скругления */
+    border: none !important;             /* Убираем рамку, если есть */
+    box-shadow: none !important;         /* Убираем тень */
+    padding: 0 !important;
+}
+
+.logo-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
