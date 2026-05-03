@@ -4,6 +4,25 @@
     box-sizing: border-box;
 }
 
+/* Плавная прокрутка для якорных ссылок */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Отступ сверху для секций (чтобы шапка не перекрывала контент) */
+section {
+    scroll-margin-top: 100px;
+}
+
+/* Для конкретных секций с ID */
+#features,
+#how-it-works,
+#stats,
+#download,
+#cta {
+    scroll-margin-top: 100px;
+}
+
 :root {
     /* Цвета строго по скриншоту */
     --primary: #D4A574;      /* Тёплый бежевый из карточки */
@@ -1398,3 +1417,77 @@ body {
         margin: 0; /* Сбрасываем любые центрирующие отступы */
     }
 }
+
+/* Убираем подчеркивание у ссылки-логотипа */
+.logo-link {
+    text-decoration: none !important;
+    color: inherit;
+    transition: transform 0.2s ease; /* Легкая анимация при клике */
+}
+
+.logo-link:hover {
+    transform: scale(1.02); /* Едва заметное увеличение при наведении */
+}
+
+/* Делаем логотип и название крупнее и жирнее */
+.logo {
+    font-size: 2rem; /* Увеличили с 1.5rem до 2rem */
+    font-weight: 800; /* Сделали шрифт очень жирным */
+    gap: 0.8rem; /* Чуть больше воздуха между иконкой и текстом */
+}
+
+/* Немного увеличим и саму иконку */
+.logo-icon {
+    width: 48px; /* Было 40px */
+    height: 48px;
+    font-size: 1.6rem; /* Иконка внутри стала больше */
+}
+
+/* Ссылка-логотип: кликабельная и без подчеркивания */
+.logo-link {
+    text-decoration: none !important;
+    color: inherit;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    display: inline-block;
+}
+
+.logo-link:hover {
+    transform: scale(1.02); /* Лёгкое увеличение при наведении */
+}
+
+/* Блокируем стандартные стили браузера для всех состояний */
+.logo-link:visited,
+.logo-link:active,
+.logo-link:focus {
+    text-decoration: none !important;
+    color: var(--dark) !important;
+}
+
+/* --- ФИКС ПОЛОЖЕНИЯ ЛОГОТИПА В ШАПКЕ --- */
+
+/* 1. Контейнер шапки: разводим логотип и меню по краям */
+.nav-container {
+    display: flex !important;
+    justify-content: space-between !important; /* Логотип слева, меню справа */
+    align-items: center !important;
+    width: 100% !important;
+}
+
+/* 2. Ссылка-логотип: прижимаем к левому краю */
+.logo-link {
+    margin-left: 0 !important;
+    margin-right: auto !important; /* Это "толкает" всё остальное меню вправо */
+    text-align: left !important;
+    padding-left: 0 !important;
+}
+
+/* 3. Сам блок логотипа: выравниваем содержимое слева */
+.logo {
+    justify-content: flex-start !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
+
+
+
